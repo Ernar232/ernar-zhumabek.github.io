@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="kk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dala | Premium Қазақстандық Мейрамхана</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- WELCOME MODAL -->
+    <div class="welcome-modal" id="welcomeModal">
+        <div class="welcome-modal-content">
+            <button class="welcome-close-btn" id="closeWelcomeModal">&times;</button>
+            <div class="welcome-icon"><i class="fa-solid fa-gift"></i></div>
+            <h2>Арнайы Ұсыныс!</h2>
+            <p class="welcome-text">Қазақ асханасы туралы 5 сұраққа жауап беріп,<br><span class="highlight">20% жеңілдік</span> алыңыз!</p>
+            <div class="welcome-features">
+                <div class="feature">
+                    <span class="feature-icon"><i class="fa-solid fa-check"></i></span>
+                    <span>5 қарапайым сұрақ</span>
+                </div>
+                <div class="feature">
+                    <span class="feature-icon"><i class="fa-regular fa-clock"></i></span>
+                    <span>1 минут уақыт</span>
+                </div>
+                <div class="feature">
+                    <span class="feature-icon"><i class="fa-solid fa-percent"></i></span>
+                    <span>20% жеңілдік</span>
+                </div>
+            </div>
+            <button class="btn-primary welcome-quiz-btn" id="goToQuizBtn">Викторинаға өту <i class="fa-solid fa-arrow-right"></i></button>
+            <button class="btn-text" id="maybeLaterBtn">Кейінірек</button>
+        </div>
+    </div>
+
+    <!-- HEADER -->
+    <header class="header">
+        <div class="container header-content">
+            <div class="logo-area">
+                <div class="logo-icon"><i class="fa-solid fa-horse-head" style="font-size: 2rem; color: var(--primary);"></i></div>
+                <div class="restaurant-name">DALA<span>.</span></div>
+            </div>
+            <nav class="nav-links">
+                <a href="#menu">Мәзір</a>
+                <a href="#quiz" id="quizNavLink">Викторина</a>
+                <a href="#order">Байланыс</a>
+            </nav>
+            <div class="auth-buttons">
+                <button class="login-btn" id="loginBtn">Кіру</button>
+                <button class="register-btn" id="registerBtn">Тіркелу</button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- HERO SECTION -->
+        <section class="hero">
+            <div class="hero-overlay"></div>
+            <div class="container hero-content">
+                <div class="hero-badge">Элиталық мейрамхана</div>
+                <h1>Шынайы <span>қазақ дәмі</span><br>үй жылуымен</h1>
+                <p>Дәстүрлі тағамдар дала жүрегінен. Жаңа, мол және махаббатпен дайындалған.</p>
+                <div class="hero-buttons">
+                    <button class="btn-primary" id="viewMenuBtn">Мәзірді көру <i class="fa-solid fa-arrow-down"></i></button>
+                    <button class="btn-secondary btn-quiz" id="heroQuizBtn"><i class="fa-solid fa-ticket"></i> Жеңілдік алу</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- MENU SECTION -->
+        <section id="menu" class="section-padding container">
+            <div class="section-header">
+                <h2 class="section-title">Сигнатуралық тағамдарымыз</h2>
+                <div class="section-divider"></div>
+                <p class="section-subtitle">Біздің бас аспаздың ең таңдаулы мәзірі</p>
+            </div>
+            <div class="menu-grid" id="menuGrid">
+                <!-- Лагман -->
+                <div class="dish-card" data-price="2800">
+                    <div class="dish-image-container">
+                        <img src="images/lagman.jpg" alt="Лагман" class="dish-image" id="img-lagman" loading="lazy" crossorigin="anonymous" onerror="this.src='https://images.unsplash.com/photo-1555939594-58d7cb561ad1?auto=format&fit=crop&q=80&w=800'">
+                        <div class="dish-badge">Танымал</div>
+                        <button class="download-image-btn" data-image="lagman" data-name="Лагман" title="Суретті жүктеу"><i class="fa-solid fa-download"></i></button>
+                    </div>
+                    <div class="dish-info">
+                        <div class="dish-name">Лагман</div>
+                        <div class="dish-description">Қолмен созылған лапша, сиыр еті, көкөністер</div>
+                        <div class="dish-bottom">
+                            <div class="dish-price">2800 ₸</div>
+                            <div class="checkbox-wrapper">
+                                <input type="checkbox" class="dish-checkbox" id="dishLagman" value="2800" data-name="Лагман">
+                                <label for="dishLagman" class="checkbox-label">
+                                    <span class="checkbox-custom"></span> Таңдау
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Бешбармақ -->
+                <div class="dish-card" data-price="4200">
+                    <div class="dish-image-container">
+                        <img src="images/beshbarmak.jpg" alt="Бешбармақ" class="dish-image" id="img-beshbarmak" loading="lazy" crossorigin="anonymous" onerror="this.src='https://images.unsplash.com/photo-1544025162-83690d9e830e?auto=format&fit=crop&q=80&w=800'">
+                        <div class="dish-badge gold">Ұлттық</div>
+                        <button class="download-image-btn" data-image="beshbarmak" data-name="Бешбармақ" title="Суретті жүктеу"><i class="fa-solid fa-download"></i></button>
+                    </div>
+                    <div class="dish-info">
+                        <div class="dish-name">Бешбармақ</div>
+                        <div class="dish-description">Жылқы еті, қамыр, сорпа, пияз</div>
+                        <div class="dish-bottom">
+                            <div class="dish-price">4200 ₸</div>
+                            <div class="checkbox-wrapper">
+                                <input type="checkbox" class="dish-checkbox" id="dishBesh" value="4200" data-name="Бешбармақ">
+                                <label for="dishBesh" class="checkbox-label">
+                                    <span class="checkbox-custom"></span> Таңдау
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Плов -->
+                <div class="dish-card" data-price="2100">
+                    <div class="dish-image-container">
+                        <img src="images/plov.jpg" alt="Плов" class="dish-image" id="img-plov" loading="lazy" crossorigin="anonymous" onerror="this.src='https://images.unsplash.com/photo-1574484284002-952d92456975?auto=format&fit=crop&q=80&w=800'">
+                        <div class="dish-badge">Хит</div>
+                        <button class="download-image-btn" data-image="plov" data-name="Плов" title="Суретті жүктеу"><i class="fa-solid fa-download"></i></button>
+                    </div>
+                    <div class="dish-info">
+                        <div class="dish-name">Плов</div>
+                        <div class="dish-description">Қой еті, күріш, сәбіз, сарымсақ</div>
+                        <div class="dish-bottom">
+                            <div class="dish-price">2100 ₸</div>
+                            <div class="checkbox-wrapper">
+                                <input type="checkbox" class="dish-checkbox" id="dishPlov" value="2100" data-name="Плов">
+                                <label for="dishPlov" class="checkbox-label">
+                                    <span class="checkbox-custom"></span> Таңдау
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Манты -->
+                <div class="dish-card" data-price="3200">
+                    <div class="dish-image-container">
+                        <img src="images/manty.jpg" alt="Манты" class="dish-image" id="img-manty" loading="lazy" crossorigin="anonymous" onerror="this.src='https://images.unsplash.com/photo-1496116218417-1a781b1c416c?auto=format&fit=crop&q=80&w=800'">
+                        <div class="dish-badge">Дәмді</div>
+                        <button class="download-image-btn" data-image="manty" data-name="Манты" title="Суретті жүктеу"><i class="fa-solid fa-download"></i></button>
+                    </div>
+                    <div class="dish-info">
+                        <div class="dish-name">Манты</div>
+                        <div class="dish-description">Сиыр еті, пияз, жұқа қамыр, қаймақ</div>
+                        <div class="dish-bottom">
+                            <div class="dish-price">3200 ₸</div>
+                            <div class="checkbox-wrapper">
+                                <input type="checkbox" class="dish-checkbox" id="dishManty" value="3200" data-name="Манты">
+                                <label for="dishManty" class="checkbox-label">
+                                    <span class="checkbox-custom"></span> Таңдау
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Қуырдақ -->
+                <div class="dish-card" data-price="3500">
+                    <div class="dish-image-container">
+                        <img src="images/kuyrdak.jpg" alt="Қуырдақ" class="dish-image" id="img-kuyrdak" loading="lazy" crossorigin="anonymous" onerror="this.src='https://images.unsplash.com/photo-1604908176997-125f25cc6f3d?auto=format&fit=crop&q=80&w=800'">
+                        <div class="dish-badge gold">Дәстүрлі</div>
+                        <button class="download-image-btn" data-image="kuyrdak" data-name="Қуырдақ" title="Суретті жүктеу"><i class="fa-solid fa-download"></i></button>
+                    </div>
+                    <div class="dish-info">
+                        <div class="dish-name">Қуырдақ</div>
+                        <div class="dish-description">Қой еті, бауыр, картоп, пияз</div>
+                        <div class="dish-bottom">
+                            <div class="dish-price">3500 ₸</div>
+                            <div class="checkbox-wrapper">
+                                <input type="checkbox" class="dish-checkbox" id="dishKuyrdak" value="3500" data-name="Қуырдақ">
+                                <label for="dishKuyrdak" class="checkbox-label">
+                                    <span class="checkbox-custom"></span> Таңдау
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Бауырсақ -->
+                <div class="dish-card" data-price="1200">
+                    <div class="dish-image-container">
+                        <img src="images/baursak.jpg" alt="Бауырсақ" class="dish-image" id="img-baursak" loading="lazy" crossorigin="anonymous" onerror="this.src='https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&q=80&w=800'">
+                        <div class="dish-badge">Жаңа піскен</div>
+                        <button class="download-image-btn" data-image="baursak" data-name="Бауырсақ" title="Суретті жүктеу"><i class="fa-solid fa-download"></i></button>
+                    </div>
+                    <div class="dish-info">
+                        <div class="dish-name">Бауырсақ</div>
+                        <div class="dish-description">Дәстүрлі қуырылған нан (1 порция)</div>
+                        <div class="dish-bottom">
+                            <div class="dish-price">1200 ₸</div>
+                            <div class="checkbox-wrapper">
+                                <input type="checkbox" class="dish-checkbox" id="dishBaursak" value="1200" data-name="Бауырсақ">
+                                <label for="dishBaursak" class="checkbox-label">
+                                    <span class="checkbox-custom"></span> Таңдау
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Сырне -->
+                <div class="dish-card" data-price="4500">
+                    <div class="dish-image-container">
+                        <img src="images/syrne.jpg" alt="Сырне" class="dish-image" id="img-syrne" loading="lazy" crossorigin="anonymous" onerror="this.src='https://images.unsplash.com/photo-1544025162-83690d9e830e?auto=format&fit=crop&q=80&w=800'">
+                        <div class="dish-badge gold">Элиталық</div>
+                        <button class="download-image-btn" data-image="syrne" data-name="Сырне" title="Суретті жүктеу"><i class="fa-solid fa-download"></i></button>
+                    </div>
+                    <div class="dish-info">
+                        <div class="dish-name">Сырне</div>
+                        <div class="dish-description">Қазанда ұзақ бұқтырылған жас қозы еті</div>
+                        <div class="dish-bottom">
+                            <div class="dish-price">4500 ₸</div>
+                            <div class="checkbox-wrapper">
+                                <input type="checkbox" class="dish-checkbox" id="dishSyrne" value="4500" data-name="Сырне">
+                                <label for="dishSyrne" class="checkbox-label">
+                                    <span class="checkbox-custom"></span> Таңдау
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Қазы-қарта -->
+                <div class="dish-card" data-price="3800">
+                    <div class="dish-image-container">
+                        <img src="images/kazy.jpg" alt="Қазы-қарта" class="dish-image" id="img-kazy" loading="lazy" crossorigin="anonymous" onerror="this.src='https://images.unsplash.com/photo-1603048297172-c92544798d5e?auto=format&fit=crop&q=80&w=800'">
+                        <div class="dish-badge">Тіскебасар</div>
+                        <button class="download-image-btn" data-image="kazy" data-name="Қазы-қарта" title="Суретті жүктеу"><i class="fa-solid fa-download"></i></button>
+                    </div>
+                    <div class="dish-info">
+                        <div class="dish-name">Қазы-қарта</div>
+                        <div class="dish-description">Жылқы етінен жасалған үйдегі шұжықтар жиынтығы</div>
+                        <div class="dish-bottom">
+                            <div class="dish-price">3800 ₸</div>
+                            <div class="checkbox-wrapper">
+                                <input type="checkbox" class="dish-checkbox" id="dishKazy" value="3800" data-name="Қазы-қарта">
+                                <label for="dishKazy" class="checkbox-label">
+                                    <span class="checkbox-custom"></span> Таңдау
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- QUIZ SECTION -->
+        <section id="quiz" class="section-padding bg-light">
+            <div class="container">
+                <div class="quiz-card">
+                    <div class="quiz-header">
+                        <i class="fa-solid fa-medal quiz-icon"></i>
+                        <h2 class="section-title">Қазақ асханасы викторинасы</h2>
+                        <p class="quiz-description">5 сұраққа дұрыс жауап беріп, 20% жеңілдікке ие болыңыз!</p>
+                    </div>
+
+                    <div id="quiz-container">
+                        <!-- Сұрақтар динамикалық түрде JS арқылы қосылады -->
+                    </div>
+
+                    <div class="quiz-controls">
+                        <button class="btn-primary" id="submitQuiz">Жауаптарды тексеру</button>
+                        <button class="btn-outline" id="resetQuiz">Қайта бастау</button>
+                    </div>
+
+                    <div id="quizResult" class="quiz-result" style="display: none;"></div>
+                    <div id="discountCode" class="discount-code" style="display: none;"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ORDER FORM -->
+        <section id="order" class="section-padding container">
+            <div class="order-layout">
+                <div class="order-info">
+                    <h2 class="section-title">Тапсырыс беру</h2>
+                    <p class="section-subtitle">Сіздің тапсырысыңыз 20 минутта дайын болады.</p>
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <i class="fa-solid fa-location-dot"></i>
+                            <span>Абай даңғылы 12, Алматы</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fa-solid fa-phone"></i>
+                            <span>+7 (727) 345-67-89</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fa-regular fa-clock"></i>
+                            <span>11:00 – 23:00 күн сайын</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="order-card">
+                    <div class="discount-input-group">
+                        <label for="discountCodeInput">Жеңілдік коды</label>
+                        <div class="discount-input-wrapper">
+                            <input type="text" id="discountCodeInput" placeholder="Кодты енгізіңіз">
+                            <button class="btn-secondary" id="applyDiscount">Қолдану</button>
+                        </div>
+                        <small id="discountMessage" class="discount-message"></small>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="customerName">Аты-жөніңіз <span class="required">*</span></label>
+                        <input type="text" id="customerName" placeholder="Мысалы: Айгерім" autocomplete="off">
+                    </div>
+
+                    <div class="price-breakdown">
+                        <div class="price-row">
+                            <span>Бастапқы баға:</span>
+                            <span><span id="originalTotal">0</span> ₸</span>
+                        </div>
+                        <div class="price-row discount-row" id="discountAmount" style="display: none;">
+                            <span>Жеңілдік (20%):</span>
+                            <span>-<span id="discountValue">0</span> ₸</span>
+                        </div>
+                        <div class="price-row total-row">
+                            <span>Барлығы:</span>
+                            <span><span id="totalAmount">0</span> ₸</span>
+                        </div>
+                    </div>
+
+                    <button class="btn-primary btn-block" id="placeOrderBtn">Тапсырысты растау</button>
+                    
+                    <div id="orderSuccess" class="alert alert-success" style="display: none;"></div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="restaurant-name">DALA<span>.</span></div>
+                    <p>Қазақ даласының дәмі сіздің дастарханыңызда.</p>
+                </div>
+                <div class="social-links">
+                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#"><i class="fa-brands fa-telegram"></i></a>
+                    <a href="#"><i class="fa-brands fa-whatsapp"></i></a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Dala Мейрамханасы. Барлық құқықтар қорғалған.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- LOGIN MODAL -->
+    <div class="modal-overlay" id="loginModalOverlay">
+        <div class="modal-content" id="loginModalContent">
+            <button class="modal-close-btn" id="closeLoginModalBtn">&times;</button>
+            <div class="modal-header-text">
+                <h2>Қош келдіңіз</h2>
+                <p>Жалғастыру үшін логин теріңіз</p>
+            </div>
+            <form id="loginForm">
+                <div class="form-group">
+                    <label for="loginEmail">Email</label>
+                    <input type="email" id="loginEmail" placeholder="email@example.com">
+                </div>
+                <div class="form-group">
+                    <label for="loginPassword">Құпия сөз</label>
+                    <input type="password" id="loginPassword" placeholder="Құпия сөзіңіз">
+                    <small class="password-hint">Құпия сөзде кемінде 1 бас әріп болуы керек</small>
+                </div>
+                <div class="modal-actions">
+                    <button type="submit" class="btn-primary btn-block" id="submitLogin">Кіру</button>
+                </div>
+            </form>
+            <div class="modal-footer-link">
+                Аккаунтыңыз жоқ па? <button type="button" class="btn-text" id="switchToRegister">Тіркелу</button>
+            </div>
+            <div id="loginError" class="alert alert-danger" style="display: none;"></div>
+        </div>
+    </div>
+
+    <!-- REGISTER MODAL -->
+    <div class="modal-overlay" id="registerModalOverlay">
+        <div class="modal-content" id="registerModalContent">
+            <button class="modal-close-btn" id="closeRegisterModalBtn">&times;</button>
+            <div class="modal-header-text">
+                <h2>Тіркелу</h2>
+                <p>Жаңа аккаунт жасау</p>
+            </div>
+            <form id="registerForm">
+                <div class="form-group">
+                    <label for="registerName">Аты-жөні</label>
+                    <input type="text" id="registerName" placeholder="Сіздің атыңыз">
+                </div>
+                <div class="form-group">
+                    <label for="registerEmail">Email</label>
+                    <input type="email" id="registerEmail" placeholder="email@example.com">
+                </div>
+                <div class="form-group">
+                    <label for="registerPassword">Құпия сөз</label>
+                    <input type="password" id="registerPassword" placeholder="Құпия сөз">
+                    <small class="password-hint">Кемінде 8 символ, 1 бас әріп, 1 сан</small>
+                </div>
+                <div class="form-group">
+                    <label for="confirmPassword">Құпия сөзді қайталаңыз</label>
+                    <input type="password" id="confirmPassword" placeholder="Құпия сөзді қайталаңыз">
+                </div>
+                <div class="modal-actions">
+                    <button type="submit" class="btn-primary btn-block" id="submitRegister">Тіркелу</button>
+                </div>
+            </form>
+            <div class="modal-footer-link">
+                Аккаунтыңыз бар ма? <button type="button" class="btn-text" id="switchToLogin">Кіру</button>
+            </div>
+            <div id="registerError" class="alert alert-danger" style="display: none;"></div>
+            <div id="registerSuccess" class="alert alert-success" style="display: none;"></div>
+        </div>
+    </div>
+
+    <!-- CHATBOT -->
+    <div class="chatbot-container" id="chatbot">
+        <div class="chatbot-header">
+            <div class="bot-info">
+                <div class="bot-avatar"><i class="fa-solid fa-robot"></i></div>
+                <div>
+                    <div class="bot-name">Dala Көмекшісі</div>
+                    <div class="bot-status-text">Онлайн</div>
+                </div>
+            </div>
+            <button id="closeChat">&times;</button>
+        </div>
+        <div class="chatbot-messages" id="chatMessages">
+            <div class="message bot">Сәлеметсіз бе! Мен Dala AI көмекшісімін. Сұрағыңыз болса, қоя беріңіз. 😊</div>
+        </div>
+        <div class="chatbot-input-area">
+            <div class="input-wrapper">
+                <input type="text" id="userInput" placeholder="Хабарлама жазыңыз...">
+                <button id="voiceBtn" class="voice-btn" title="Дауыспен жазу"><i class="fa-solid fa-microphone"></i></button>
+            </div>
+            <button id="sendMessage" class="send-btn"><i class="fa-solid fa-paper-plane"></i></button>
+        </div>
+    </div>
+    <button class="chatbot-toggle" id="toggleChat"><i class="fa-solid fa-comment-dots"></i></button>
+
+    <script src="script.js"></script>
+</body>
+</html>
